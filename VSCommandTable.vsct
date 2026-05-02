@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
+
+	<Commands package="VeselinMarinovVirus">
+		<Groups>
+			<Group guid="VeselinMarinovVirus" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="File"/>
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="VeselinMarinovVirus" id="MyCommand" priority="0x0100" type="Button">
+				<Parent guid="VeselinMarinovVirus" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="RunOutline" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Stаrt Withоut Dеbugging (Ctrl+F5)</ButtonText>
+					<LocCanonicalName>.VeselinMarinovVirus.MyCommand</LocCanonicalName>
+				</Strings>
+			</Button>
+
+			<Button guid="VeselinMarinovVirus" id="StopCommand" priority="0x0101" type="Button">
+				<Parent guid="VeselinMarinovVirus" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="StatusError" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>НЕ МЕ ЦЪКАЙ</ButtonText>
+					<LocCanonicalName>.VeselinMarinovVirus.StopCommand</LocCanonicalName>
+				</Strings>
+				<KeyBindings>
+					<!-- Ctrl + Shift + 3 -->
+					<KeyBinding guid="VeselinMarinovVirus" id="StopCommand" editor="guidVSStd97" key1="VK_3" mod1="Control|Shift"/>
+				</KeyBindings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="VeselinMarinovVirus" value="{7061cf12-6426-4864-ba28-0cdcd9dce046}">
+			<IDSymbol name="MyMenuGroup" value="0x0001" />
+			<IDSymbol name="MyCommand" value="0x0100" />
+			<IDSymbol name="StopCommand" value="0x0101" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
